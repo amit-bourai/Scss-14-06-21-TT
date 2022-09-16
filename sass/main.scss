@@ -1,0 +1,79 @@
+@import " mixin";
+@import "var";
+
+// sass - css
+// scss - css3
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+// 1. operators
+// 2. variables
+// 3. nesting
+// 4. mixin and include
+// 5. paramters
+// 6. partials
+
+// @mixin flexprop {
+//     display: flex; 
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column; 
+// }//mixin
+
+// @mixin h1_p_commencode($par1, $par2) {
+//     color:#222f3e;
+//     font-size: 15rem - 5rem;//operators
+//     letter-spacing: $par1;
+//     text-transform: $par2;
+// }
+
+// $bg-color: #10ac84; //variables
+
+.main_header{
+    width: 100vw;
+    height: 100vh;
+    // display: grid;
+
+    // display: flex; 
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    @include flexprop;
+    background-color: $bg-color;//variables
+
+    h1{ 
+        @include h1_p_commencode(0.8rem, uppercase);
+        &:hover{
+            color: #c8d6e5;
+        }
+        &::after{
+            content: " Channel";
+        }
+    } 
+    
+    p{
+        @include h1_p_commencode(0.3rem, lowercase);
+        &:hover{
+            color: #c8d6e5;
+        }
+    }//nesting
+
+}
+
+// h1{
+//     color:#222f3e;
+//     font-size: 15rem - 5rem;//oper
+// }
+
+// p{
+//     color:#222f3e;
+//     font-size: 15rem - 5rem;//oper
+// }
